@@ -1,6 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+Note: This is a custom project forked from BayesMallows v1.5.0, all credits go to original authors.
+Changes made:
+- removed all `cluster_assignment` and `cluster_probs`
+
 # BayesMallows
 
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/BayesMallows)](https://cran.r-project.org/package=BayesMallows)
