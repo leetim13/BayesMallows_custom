@@ -426,7 +426,7 @@ compute_mallows <- function(rankings = NULL,
 
   fit <- tidy_mcmc(
     fits, rho_thinning, rankings, alpha_jump,
-    n_clusters, nmc, aug_thinning, n_items
+    n_clusters, nmc, aug_thinning, n_items, clus_thin
   )
 
   fit$save_aug <- save_aug
