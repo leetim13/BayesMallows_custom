@@ -1,9 +1,16 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-Note: This is a custom project forked from BayesMallows v1.5.0, all credits go to original authors.
+Note: This is a custom project forked from BayesMallows `v1.5.0`, all credits go to original authors.
 Changes made:
-- removed all `cluster_assignment` and `cluster_probs`
+- removed all `cluster_assignment` and `cluster_probs` due to a bug that still stores and calculates cluster info even when `n_cluster` is set to `1`. This has lead to memory overflow and the error `missing value where TRUE/FALSE needed` (when an R matrix has too many items).
+
+Installation steps:
+- `module load R/4.4.0`
+- `remove.packages("BayesMallows")`
+- `remotes::install_github("leetim13/BayesMallows_custom")`
+- `packageVersion("BayesMallows")`
+  - should be `# 1.5.0`
 
 # BayesMallows
 
