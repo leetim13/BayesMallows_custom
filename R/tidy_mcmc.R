@@ -17,21 +17,21 @@ tidy_mcmc <- function(fits, rho_thinning, rankings, alpha_jump,
     tidy_alpha(fits[[i]]$alpha, i, alpha_jump)
   }))
 
-  fit$cluster_assignment <- do.call(rbind, lapply(seq_along(fits), function(i) {
-    tidy_cluster_assignment(fits[[i]]$cluster_assignment, i, n_clusters, fits[[i]]$n_assessors, 
-                            floor(nmc/clus_thin)
-                            )
-  }))
-
-  fit$cluster_probs <- do.call(rbind, lapply(seq_along(fits), function(i) {
-    tidy_cluster_probabilities(fits[[i]]$cluster_probs, i, n_clusters, 
-                               floor(nmc/clus_thin)
-                               )
-  }))
-
-  fit$within_cluster_distance <- do.call(rbind, lapply(seq_along(fits), function(i) {
-    tidy_wcd(fits[[i]]$within_cluster_distance, i)
-  }))
+  # fit$cluster_assignment <- do.call(rbind, lapply(seq_along(fits), function(i) {
+  #   tidy_cluster_assignment(fits[[i]]$cluster_assignment, i, n_clusters, fits[[i]]$n_assessors, 
+  #                           floor(nmc/clus_thin)
+  #                           )
+  # }))
+  # 
+  # fit$cluster_probs <- do.call(rbind, lapply(seq_along(fits), function(i) {
+  #   tidy_cluster_probabilities(fits[[i]]$cluster_probs, i, n_clusters, 
+  #                              floor(nmc/clus_thin)
+  #                              )
+  # }))
+  # 
+  # fit$within_cluster_distance <- do.call(rbind, lapply(seq_along(fits), function(i) {
+  #   tidy_wcd(fits[[i]]$within_cluster_distance, i)
+  # }))
 
   fit$augmented_data <- do.call(rbind, lapply(seq_along(fits), function(i) {
     tidy_augmented_data(fits[[i]]$augmented_data, i, items, aug_thinning)
